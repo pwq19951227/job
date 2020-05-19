@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>主页</title>
+    <style>
+        .img-div{
+            width: 100%;
+            height: 600px;
+            text-align: center;;
+            background-color: black;
+        }
+        .img-div img{
+            margin-top: 10vh;
+        }
+        .img-div button{
+            width: 200px;
+            height: 50px;
+            background-color: white;
+            color: black;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 10px;
+            margin-top: 6vh;
+            border:0;
+        }
+        .step-div{
+            width: 80%;
+            height: 160px;
+            background-color: white;
+            position: absolute;
+            margin: auto;
+            left: 0;
+            right: 0;
+            margin-top: -100px;
+            display: flex;
+        }
+        .step-div span{
+            width: 23%;
+            text-align: center;
+        }
+        .step-div span img{
+            margin-top: 25px;
+        }
+        .rigth-img{
+            height: 20px;
+            width: 20px;
+            margin-top: 60px;
+        }
+        .content-div{
+            text-align: left;
+            margin-left: 20px;
+        }
+        .bottom-div{
+            width: 100%;
+            height: 270px;
+            background-color: white;
+            margin-top: 10vh;
+        }
+        .title-div{
+            text-align: center;
+            font-size: 20px;
+            padding-top: 20px;
+        }
+        .fun-div{
+            padding-top: 80px;
+            width: 100%;
+            display: flex;
+        }
+        .fun-div span{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+        }
+        .left-div{
+            float: left;
+        }
+        .right-div{
+            float: right;
+            margin-top: -10px;
+        }
+        .big{
+            font-size:20px;
+            font-weight: 600;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="img-div">
+        <img src="img/character.png"/><br>
+        <button>立刻接入</button>
+    </div>
+    <div class="step-div">
+        <span>
+            <img src="img/step1.jpg"/><br>
+                使用手机号接入网站
+        </span>
+        <img class="rigth-img" src="img/right.png">
+        <span>
+            <img src="img/step2.jpg"/><br>
+                联系客服获取推广权限
+        </span>
+        <img class="rigth-img" src="img/right.png">
+        <span>
+            <img src="img/step3.jpg"/><br>
+                发布抖音短视频，添加小程序
+        </span>
+        <img class="rigth-img" src="img/right.png">
+        <span>
+            <img src="img/step4.jpg"/><br>
+            <div class="content-div">
+                你将获取对应佣金，佣金可以在网站上绑卡提现
+            </div>
+        </span>
+    </div>
+    <div class="bottom-div">
+        <div class="title-div">—— 我们的优势 ——</div>
+        <div class="fun-div">
+            <span>
+                <div class="left-div">
+                    <img src="img/xin.jpg" />
+                </div>
+                <div class="rigth-div">
+                    <p class="big">跟踪服务</p>
+                    <p>24小时客服针对性服务</p>
+                </div>
+            </span>
+            <span>
+                <div class="left-div">
+                    <img src="img/ad.jpg" />
+                </div>
+                <div class="rigth-div">
+                    <p class="big">海量广告</p>
+                    <p>众多不同类别的游戏广告，充分的满足各种属性账号来选择</p>
+                </div>
+            </span>
+        </div>
+    </div>
+  </body>
+</html>
