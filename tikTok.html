@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>抖音号管理</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        a:link,a:visited,a:hover,a:active { 
+            color:black; 
+            text-decoration:none; 
+        } 
+        .left-nav{
+            float: left;
+            text-align: center;
+            font-size: 16px;
+            width: 15%;
+            height: 100vh;
+            background-color: #130335;
+        }
+        .left-nav div{
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+        }
+        .click{
+            background-color: #FF3333;
+        }
+        .bottom-iframe{
+            border: 0;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        .rigth-content{
+            float: left;
+            width: 75%;
+            margin: 1%;
+            padding: 2%;
+            padding-top: 0;
+            background-color: white;
+        }
+        .title{
+          font-size: 16px;
+          line-height: 50px;
+          border-bottom: 1px solid #e0e0e0;
+        }
+        .title button{
+          float: right;
+          width: 130px;
+          height: 40px;
+          line-height: 40px;
+          color: white;
+          background-color: #FF3333;
+          border: 0;
+          border-radius: 10px;
+        }
+        table{
+          margin-top: 30px;
+          width: 100%;
+          text-align: center;
+          border-collapse:collapse;
+        }
+        table img{
+          width: 65px;
+          height: 65px;
+          border-radius: 50%;
+          margin-right: 20px;
+        }
+        table button{
+          width: 100px;
+          height: 40px;
+          line-height: 40px;
+          color: red;
+          background-color: white;
+          border: 1px solid red;
+          border-radius: 10px;
+        }
+        thead{
+          background-color: #F8F8F9;
+          height: 50px;
+          line-height: 50px;
+          border-right: 0.5px solid #e0e0e0;
+        }
+        thead,th,td{
+          font-weight:normal;
+        }
+        tbody tr{
+          height: 150px;
+          line-height: 150px;
+          border-top: 0.5px solid #e0e0e0;
+        }
+        tbody tr td:first-child{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="left-nav">
+      <div></div>
+      <div><a href="index.html?url=publicityManage" target="_parent">推广管理</a></div>
+      <div class="click"><a href="index.html?url=tikTok" target="_parent">抖音号管理</a></div>
+  </div>
+  <div class="rigth-content">
+    <p class="title">我的抖音号<button>+添加抖音号</button></p>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 25%;">抖音账号</th>
+          <th style="width: 25%;">创建时间</th>
+          <th style="width: 20%;">权限</th>
+          <th style="width: 15%;">状态</th>
+          <th style="width: 15%;">操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><img src="img/head.jpg"/>大萌游戏</td>
+          <td>2020-05-21</td>
+          <td><button>重新授权</button></td>
+          <td>正常</td>
+          <td><a href="javascript:void(0);">删除</a></td>
+        </tr>
+        <tr>
+          <td><img src="img/head.jpg"/>大萌游戏</td>
+          <td>2020-05-21</td>
+          <td><button>重新授权</button></td>
+          <td>正常</td>
+          <td><a href="javascript:void(0);">删除</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <iframe class="bottom-iframe" src="bottom.html">
+
+  </iframe>
+  </body>
+</html>

@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>主页</title>
     <style>
+        body{
+            margin: 0;
+        }
         .img-div{
             width: 100%;
             height: 60vh;
@@ -22,8 +25,8 @@
             color: black;
             font-size: 18px;
             font-weight: 600;
+            margin-top: 2vh;
             border-radius: 10px;
-            margin-top: 3vh;
             border:0;
         }
         .step-div{
@@ -55,7 +58,7 @@
         }
         .bottom-div{
             width: 100%;
-            height: 25vh;
+            height: 40vh;
             background-color: white;
             margin-top: 10vh;
         }
@@ -65,7 +68,7 @@
             padding-top: 20px;
         }
         .fun-div{
-            padding-top: 5vh;
+            padding-top: 2vh;
             width: 100%;
             display: flex;
         }
@@ -85,6 +88,10 @@
         .big{
             font-size:20px;
             font-weight: 600;
+        }
+        .bottom-iframe{
+            border: 0;
+            width: 100%;
         }
     </style>
   </head>
@@ -138,6 +145,29 @@
                 </div>
             </span>
         </div>
+        <div class="fun-div">
+            <span>
+                <div class="left-div">
+                    <img src="img/xin.jpg" />
+                </div>
+                <div class="rigth-div">
+                    <p class="big">跟踪服务</p>
+                    <p>24小时客服针对性服务</p>
+                </div>
+            </span>
+            <span>
+                <div class="left-div">
+                    <img src="img/ad.jpg" />
+                </div>
+                <div class="rigth-div">
+                    <p class="big">海量广告</p>
+                    <p>众多不同类别的游戏广告，充分的满足各种属性账号来选择</p>
+                </div>
+            </span>
+        </div>
     </div>
+    <iframe class="bottom-iframe" src="bottom.html">
+
+    </iframe>
   </body>
 </html>

@@ -18,9 +18,29 @@
     <![endif]-->
     <script>
         $(function () {
+            var url=getQueryVariable("url");
+            if(url!=''){
+                switchPage(url);
+            }
             $('.dropdown-toggle').dropdown()
+            $('.logo-img').click(function(){
+                $(window).attr('location','index.html');
+            })
         })
-    </script>
+        function switchPage(url){
+            document.getElementById("body-iframe").src=url+".html";
+        }
+        function getQueryVariable(variable)
+        {
+            var query = window.location.search.substring(1);
+            var vars = query.split("&");
+            for (var i=0;i<vars.length;i++) {
+                    var pair = vars[i].split("=");
+                    if(pair[0] == variable){return pair[1];}
+            }
+            return(false);
+        }
+            </script>
     <style>
         body{
             background-color: #F4F5F6;
@@ -39,16 +59,26 @@
             line-height: 6vh;
             display: flex;
         }
-        .dropdown{
+        .logo-img{
             position: absolute;
-            right: 5%;
+            width: 50px;
+            top: 10px;
+            left: 10%;
+        }
+        .dropdown{
+            margin-right: 10%;
         }
         .dropdown-menu{
             text-align: center;
             min-width: 100px;
             line-height: 30px;
         }
-        iframe{
+        .caret{
+            position: absolute;
+            top: 25px;
+            margin-left: 5px;
+        }
+        #body-iframe{
             border: 0;
             width: 100%;
             height: 93vh;
@@ -76,6 +106,7 @@
             color: #666666;
             border: 1px solid #999999;
             margin-top: 10px;
+            margin-right: 10%;
         }
         .show{
             display: inline;
@@ -85,11 +116,12 @@
   <body>
     <div class="head-div">
         <div class="link-div">
-            <a href="javascript:void(0);" class="click">推广管理</a>
-            <a href="javascript:void(0);">我要推广</a>
-            <a href="javascript:void(0);">运营数据</a>
-            <a href="javascript:void(0);">财务数据</a>
-            <a href="javascript:void(0);">关于吾抖</a>
+            <img class="logo-img" src="img/logo.png">
+            <a href="index.html?url=publicityManage" target="_parent" class="click">推广管理</a>
+            <a href="index.html?url=myPublicity" target="_parent">我要推广</a>
+            <a href="index.html?url=publicityData" target="_parent">运营数据</a>
+            <a href="index.html?url=financeData" target="_parent">财务数据</a>
+            <a href="index.html?url=description" target="_parent">关于吾抖</a>
         </div>
         <button type="button" class="login-btn hide" >登录</button>
         <div class="dropdown show">
@@ -98,12 +130,12 @@
                 <b class="caret"></b>
               </a>
               <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                <a href="javascript:void(0);">个人中心</a><br>
-                <a href="javascript:void(0);">注销登录</a>
+                <a href="index.html?url=sysSetting" target="_parent">个人中心</a><br>
+                <a href="index.html?url=home" target="_parent">注销登录</a>
               </ul>
         </div>
     </div>
-    <iframe src="home.html" width="100%">
+    <iframe id="body-iframe" src="home.html">
 
     </iframe>
   </body>
