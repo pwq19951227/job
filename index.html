@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,86 +19,123 @@
     <![endif]-->
     <script>
         $(function () {
-            var url=getQueryVariable("url");
-            if(url!=''){
+            var url = getQueryVariable("url");
+            var tag = getQueryVariable("tag");
+            if (url != '') {
+                switchColor(tag);
                 switchPage(url);
             }
-            $('.dropdown-toggle').dropdown()
-            $('.logo-img').click(function(){
-                $(window).attr('location','index.html');
-            })
+            $('.dropdown-toggle').dropdown();
+            $('.logo-img').click(function () {
+                $(window).attr('location', 'index.html');
+            });
         })
-        function switchPage(url){
-            document.getElementById("body-iframe").src=url+".html";
+        function switchColor(tag) {
+            $('.link-div a').removeClass('click');
+            switch (tag) {
+                case '1':
+                    $('.link-div a:eq(0)').addClass('click');
+                    break;
+                case '2':
+                    $('.link-div a:eq(1)').addClass('click');
+                    break;
+                case '3':
+                    $('.link-div a:eq(2)').addClass('click');
+                    break;
+                case '4':
+                    $('.link-div a:eq(3)').addClass('click');
+                    break;
+                case '5':
+                    $('.link-div a:eq(4)').addClass('click');
+                    break;
+            }
         }
-        function getQueryVariable(variable)
-        {
+        function switchPage(url) {
+            document.getElementById("body-iframe").src = url + ".html";
+        }
+        function getQueryVariable(variable) {
             var query = window.location.search.substring(1);
             var vars = query.split("&");
-            for (var i=0;i<vars.length;i++) {
-                    var pair = vars[i].split("=");
-                    if(pair[0] == variable){return pair[1];}
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split("=");
+                if (pair[0] == variable) { return pair[1]; }
             }
-            return(false);
+            return (false);
         }
-            </script>
+    </script>
     <style>
-        body{
+        body {
             background-color: #F4F5F6;
         }
-        a:link,a:visited,a:hover,a:active { 
-        color:black; 
-        text-decoration:none; 
-        } 
-        .click{
+
+        a:link,
+        a:visited,
+        a:hover,
+        a:active {
+            color: black;
+            text-decoration: none;
+        }
+
+        .click {
             color: red !important;
         }
-        .head-div{
+
+        .head-div {
             background-color: white;
             width: 100%;
             height: 6vh;
             line-height: 6vh;
             display: flex;
         }
-        .logo-img{
+
+        .logo-img {
             position: absolute;
             width: 50px;
             top: 10px;
             left: 10%;
         }
-        .dropdown{
+
+        .dropdown {
             margin-right: 10%;
         }
-        .dropdown-menu{
+
+        .dropdown-menu {
             text-align: center;
             min-width: 100px;
             line-height: 30px;
         }
-        .caret{
+
+        .caret {
             position: absolute;
             top: 25px;
             margin-left: 5px;
         }
-        #body-iframe{
+
+        #body-iframe {
             border: 0;
             width: 100%;
             height: 93vh;
         }
-        .link-div{
+
+        .link-div {
             width: 90%;
             text-align: center;
         }
-        .link-div a{
+
+        .link-div a {
             width: 20%;
             margin-left: 80px;
         }
-        .arc{
+
+        .arc {
             border-radius: 5px;
         }
-        .hide{
+
+        .hide {
             display: none;
         }
-        .login-btn{
+
+        .login-btn {
             width: 80px;
             height: 30px;
             line-height: 30px;
@@ -108,35 +146,39 @@
             margin-top: 10px;
             margin-right: 10%;
         }
-        .show{
+
+        .show {
             display: inline;
         }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="head-div">
         <div class="link-div">
             <img class="logo-img" src="img/logo.png">
-            <a href="index.html?url=publicityManage" target="_parent" class="click">推广管理</a>
-            <a href="index.html?url=myPublicity" target="_parent">我要推广</a>
-            <a href="index.html?url=publicityData" target="_parent">运营数据</a>
-            <a href="index.html?url=financeData" target="_parent">财务数据</a>
-            <a href="index.html?url=description" target="_parent">关于吾抖</a>
+            <a href="index.html?url=publicityManage&tag=1" target="_parent">推广管理</a>
+            <a href="index.html?url=myPublicity&tag=2" target="_parent">我要推广</a>
+            <a href="index.html?url=publicityData&tag=3" target="_parent">运营数据</a>
+            <a href="index.html?url=financeData&tag=4" target="_parent">财务数据</a>
+            <a href="index.html?url=description&tag=5" target="_parent">关于吾抖</a>
         </div>
-        <button type="button" class="login-btn hide" >登录</button>
+        <button type="button" class="login-btn hide">登录</button>
         <div class="dropdown show">
-            <a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
+            <a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target="#"
+                href="/page.html">
                 16611233312
                 <b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+            </a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                 <a href="index.html?url=sysSetting" target="_parent">个人中心</a><br>
                 <a href="index.html?url=home" target="_parent">注销登录</a>
-              </ul>
+            </ul>
         </div>
     </div>
     <iframe id="body-iframe" src="home.html">
 
     </iframe>
-  </body>
+</body>
+
 </html>
