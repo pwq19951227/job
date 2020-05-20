@@ -6,10 +6,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>关于吾抖</title>
     <style>
-        
+        .banner-div{
+          width: 100%;
+        }
+        .banner-div img{
+          width: 100%;
+        }
+        .content-div{
+          padding:40px 50px;
+          width: calc(70% - 100px);
+          height: 220px;
+          background-color: white;
+          margin: auto;
+          margin-top: 20px;
+        }
+        .left-div{
+          float: left;
+          width: 50%;
+        }
+        .left-div .title{
+          font-size: 28px;
+          margin-top: 20px;
+        }
+        .left-div .desc{
+          font-size: 17px;
+          line-height: 30px;
+        }
+        .right-div{
+          text-align: center;
+          float: right;
+          width: 50%;
+        }
+        .bottom-div{
+          padding:20px 50px;
+          width: calc(70% - 100px);
+          background-color: white;
+          margin: auto;
+          margin-top: 10px;
+        }
+        .bottom-div .title{
+          font-size: 28px;
+          margin: 0;
+        }
+        .bottom-div .desc{
+          margin-top: 10px;
+          line-height: 25px;
+        }
+        #bottom-iframe{
+            border: 0;
+            width: 100%;
+        }
     </style>
   </head>
   <body>
-    关于吾抖
+    <div class="banner-div">
+      <img src="img/guanyu.jpg" />
+    </div>
+    <div class="content-div">
+      <div class="left-div">
+        <p class="title">关于吾抖</p>
+        <p class="desc">服务于服务于服务于，服务于服务于服务于服务于服务于服务于服务于， 服务于服务于服务于服务于服务于，服务于服务于服务于，服务于服务于服务于服务于服务于服务于服务于， 服务于服务于服务</p>
+      </div>
+      <div class="right-div">
+        <img src="img/heidong.jpg" />
+      </div>
+    </div>
+    <div class="bottom-div">
+      <p class="title">付费会员</p>
+        <p class="desc">平台设立会员制度，服务于服务于服务于服务于服务于，服务于服务于服务于，服务于服务于服务于服务于服务于服务于服务于， 服务于服务于服务，平台设立会员制度，服务于服务于服务于服务于服务于，服务于服务于服务于，服务于服务于服务于服务于服务于服务于服务于， 服务于服务于服务</p>
+    </div>
+
+    <iframe id="bottom-iframe" src="bottom.html">
+
+    </iframe>
   </body>
 </html>
