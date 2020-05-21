@@ -25,7 +25,7 @@
           width: 50%;
         }
         .left-div .title{
-          font-size: 28px;
+          font-size: 25px;
           margin-top: 20px;
         }
         .left-div .desc{
@@ -45,16 +45,57 @@
           margin-top: 10px;
         }
         .bottom-div .title{
-          font-size: 28px;
+          font-size: 25px;
           margin: 0;
+          margin-top: 20px;
         }
         .bottom-div .desc{
           margin-top: 10px;
           line-height: 25px;
         }
+        .contact-div{
+          text-align: center;
+          height: 40vh;
+          padding:20px 50px;
+          width: calc(70% - 100px);
+          background-color: white;
+          margin: auto;
+          margin-top: 10px;
+        }
+        .contact-div .title{
+          font-size: 25px;
+          margin: 0;
+        }
+        .service{
+          width: 100%;
+        }
+        .service .service-left{
+          width: 50%;
+          float: left;
+        }
+        .service .service-right{
+          width: 50%;
+          float: right;
+        }
+        .service .img{
+            font-size: 18px;
+            margin-top: 40px;
+        }
+        .service .img div{
+            margin: auto;
+            width: 130px;
+            height: 130px;
+            border-radius: 5px;
+            border: 1px solid #999999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
         #bottom-iframe{
             border: 0;
             width: 100%;
+            height: 70px;
+            margin-top: 20px;
         }
     </style>
   </head>
@@ -73,9 +114,32 @@
     </div>
     <div class="bottom-div">
       <p class="title">付费会员</p>
-        <p class="desc">平台设立会员制度，服务于服务于服务于服务于服务于，服务于服务于服务于，服务于服务于服务于服务于服务于服务于服务于， 服务于服务于服务，平台设立会员制度，服务于服务于服务于服务于服务于，服务于服务于服务于，服务于服务于服务于服务于服务于服务于服务于， 服务于服务于服务</p>
+      <p class="desc">平台设立会员制度，服务于服务于服务于服务于服务于，服务于服务于服务于，服务于服务于服务于服务于服务于服务于服务于， 服务于服务于服务，平台设立会员制度，服务于服务于服务于服务于服务于，服务于服务于服务于，服务于服务于服务于服务于服务于服务于服务于， 服务于服务于服务</p>
+      <p class="title">如何使用吾抖平台</p>
+      <p class="desc">平台设立会员制度，服务于服务于服务于服务于服务于，服务于服务于服务于，服务于服务于服务于服务于服务于，服务于服务于服务于，服务于服务于服务于服务于服务于服务于服务于， 服务于服务于服务</p>
+      <p class="title">如何提现</p>
+      <p class="desc">平台设立会员制度，服务于服务于服务于服务于服务于，服务于服务于服务于，服务于服务于</p>
     </div>
-
+    <div class="contact-div">
+      <div>
+        <p class="title">联系我们</p>
+        <p class="desc">任何剪辑和业务问题，我们都有专人帮你解答</p>
+      </div>
+      <div class="service">
+        <div class="service-left">
+          <div class="img">
+            <div><img src="img/code.png" /></div><br>
+            剪辑武老师
+          </div>
+        </div>
+        <div class="service-right">
+          <div class="img">
+            <div><img src="img/code.png" /></div><br>
+            客服小雨
+          </div>
+        </div>
+      </div>
+    </div>
     <iframe id="bottom-iframe" src="bottom.html">
 
     </iframe>

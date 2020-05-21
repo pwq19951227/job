@@ -67,7 +67,7 @@
         body {
             background-color: #F4F5F6;
         }
-
+        a,
         a:link,
         a:visited,
         a:hover,
@@ -94,12 +94,32 @@
             top: 10px;
             left: 10%;
         }
+        .wx-dropdown{
+            position: relative;
+            margin-right: 2%;
+        }
 
+        .wx-dropdown .logo{
+            width: 30px;
+            height: 30px;
+        }
         .dropdown {
             margin-right: 10%;
         }
 
-        .dropdown-menu {
+        .code-div{
+            text-align: center;
+            margin-left: -7vw;
+            line-height: 0;
+            padding-bottom: 20px;
+        }
+        .code-div img{
+            width: 70px;
+            height: 70px;
+            margin: 20px;
+        }
+
+        .fun {
             text-align: center;
             min-width: 100px;
             line-height: 30px;
@@ -163,14 +183,30 @@
             <a href="index.html?url=financeData&tag=4" target="_parent">财务数据</a>
             <a href="index.html?url=description&tag=5" target="_parent">关于吾抖</a>
         </div>
+        <div class="wx-dropdown">
+            <a src="javascript:void(0);" class="dropdown-toggle" id="wxLabel" role="button" data-toggle="dropdown" data-target="#">
+                <img class="logo" src="img/wxlogo.png" />
+            </a>
+            <ul class="dropdown-menu code-div" role="menu" aria-labelledby="wxLabel">
+                <div style="display: flex;">
+                    <div>
+                        <img src="img/code.png" />
+                        剪辑武老师
+                    </div>
+                    <div>
+                        <img src="img/code.png" />
+                        客服小雨
+                    </div>
+                </div>
+            </ul>
+        </div>
         <button type="button" class="login-btn hide">登录</button>
         <div class="dropdown show">
-            <a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target="#"
-                href="/page.html">
+            <a src="javascript:void(0);" class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target="#">
                 16611233312
                 <b class="caret"></b>
             </a>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+            <ul class="dropdown-menu fun" role="menu" aria-labelledby="dLabel">
                 <a href="index.html?url=sysSetting" target="_parent">个人中心</a><br>
                 <a href="index.html?url=home" target="_parent">注销登录</a>
             </ul>
