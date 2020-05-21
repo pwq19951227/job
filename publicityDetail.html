@@ -1,15 +1,243 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>推广详情</title>
-    <style>
-        
-    </style>
-  </head>
-  <body>
-    <div></div>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>推广详情</title>
+  <style>
+    ::-webkit-scrollbar {
+      width: 14px;
+      height: 14px;
+    }
+
+    ::-webkit-scrollbar-track,
+    ::-webkit-scrollbar-thumb {
+      border-radius: 999px;
+      border: 5px solid transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      min-height: 20px;
+      background-clip: content-box;
+      box-shadow: 0 0 0 5px rgba(0, 0, 0, .2) inset;
+    }
+
+    a,
+    a:link,
+    a:visited,
+    a:hover,
+    a:active {
+      color: #08c;
+      text-decoration: none;
+    }
+
+    .body-div {
+      padding: 0 10vw;
+    }
+
+    .body-div img {
+      width: 100%;
+    }
+
+    .breadcrumb {
+      padding: 8px 15px;
+      margin: 0;
+      list-style: none;
+      background-color: #f5f5f5;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+    }
+
+    .breadcrumb>li {
+      display: inline-block;
+      text-shadow: 0 1px 0 #fff;
+    }
+
+    .breadcrumb>.active {
+      color: black;
+    }
+
+    .breadcrumb>li>.divider {
+      padding: 0 5px;
+      color: #ccc;
+    }
+
+    .content-div {
+      padding: 20px;
+      background-color: white;
+      min-height: 70vh;
+    }
+
+    .head {
+      padding-top: 20px;
+      padding-bottom: 10px;
+      float: left;
+      width: 100%;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .img-div {
+      float: left;
+      width: 15%;
+    }
+
+    .img-div img {
+      width: 125px;
+      height: 125px;
+      border-radius: 5px;
+    }
+
+    .content {
+      float: left;
+      width: 50%;
+    }
+
+    .content p {
+      margin: 10px 0;
+    }
+
+    .title {
+      font-size: 20px;
+    }
+
+    .title button {
+      font-size: 16px;
+      font-weight: 600;
+      margin-left: 50px;
+      width: 150px;
+      height: 40px;
+      line-height: 40px;
+      color: white;
+      background-color: #FF3333;
+      border: 0;
+      border-radius: 5px;
+    }
+
+    .desc {
+      font-size: 14px;
+    }
+
+    .tag1 {
+      height: 20px;
+      line-height: 20px;
+      font-size: 12px;
+      padding: 0 5px;
+      display: inline-block;
+      color: #999999;
+      background-color: #F9F8F9;
+      border: 0.5px solid #E6E6E7;
+      border-radius: 5px;
+    }
+
+    .tag2 {
+      height: 20px;
+      line-height: 20px;
+      font-size: 12px;
+      padding: 0 5px;
+      display: inline-block;
+      color: #FF3333;
+      background-color: #FEE3E3;
+      border: 0.5px solid #FF3333;
+      margin-left: 10px;
+      border-radius: 5px;
+    }
+
+    .code {
+      color: #999999;
+      float: right;
+      width: 20%;
+      text-align: center;
+      margin-top: -10px;
+    }
+
+    .code div {
+      padding: 5px;
+      margin: auto;
+      width: 105px;
+      height: 105px;
+      border-radius: 5px;
+      border: 0.5px solid #e0e0e0;
+      margin-bottom: 5px;
+    }
+
+    .explain {
+      width: 100%;
+      display: block;
+      margin-top: 10px;
+      font-size: 16px;
+      float: left;
+    }
+
+    .desc-div {
+      margin-top: 10vh;
+      float: left;
+    }
+
+    .desc-div button {
+      margin-top: 30px;
+      font-size: 16px;
+      font-weight: 600;
+      width: 150px;
+      height: 40px;
+      line-height: 40px;
+      color: white;
+      background-color: #FF3333;
+      border: 0;
+      border-radius: 5px;
+    }
+
+    .bottom-iframe {
+      border: 0;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      height: 70px;
+      margin-top: 2vh;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="body-div">
+    <img src="img/banner02.jpg" />
+    <ul class="breadcrumb">
+      <li><a href="index.html?url=myPublicity&tag=2" target="_parent">我要推广</a> <span class="divider">/</span></li>
+      <li class="active">弹弹恋爱</li>
+    </ul>
+    <div class="content-div">
+      <div class="head">
+        <div class="img-div">
+          <img src="img/head.jpg" />
+        </div>
+        <div class="content">
+          <p class="title">弹弹恋爱<button>开通收益权限</button></p>
+          <p class="desc">已有1254人推广</p>
+          <p><span class="tag1">益智</span><span class="tag2">近期最高收益:1234.00元</span></p>
+        </div>
+        <div class="code">
+          <div>
+            <img src="img/code.png" />
+          </div>
+          抖音app扫一扫拍抖音
+        </div>
+      </div>
+      <span class="explain">一款恋爱休闲小游戏</span>
+      <div class="desc-div">
+        <p>推广说明</p>
+        <p>1、视频发布后，前七天视频发布后，前七天视频发布后，前七天视频发布后，前七天视频发布后，前七天视频发布后，前七天</p>
+        <p>2、视频发布后，前七天视频发布后，前七天视频发布后，前七天视频发布后，前七天视频发布后</p>
+        <p>3、视频发布后，前七天视频发布后，前七天视频发布后，前七天</p>
+        <p>4、视频发布后，前七天视频发布后，前七</p>
+        <a href="index.html?url=releaseVideo&tag=2" target="_parent"><button>发布视频</button></a></div>
+      </div>
+    </div>
+  </div>
+  <iframe class="bottom-iframe" src="bottom.html">
+
+  </iframe>
+</body>
+
 </html>
