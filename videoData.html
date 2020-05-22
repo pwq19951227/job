@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>视频数据</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         ::-webkit-scrollbar {  
           width: 14px;  
@@ -20,9 +22,16 @@
           background-clip: content-box;  
           box-shadow: 0 0 0 5px rgba(0,0,0,.2) inset;  
         }  
-
+        a,
+        a:link,
+        a:visited,
+        a:hover,
+        a:active {
+            text-decoration: none;
+        }
         body{
             margin: 0;
+            background-color: #F4F5F6;
         }
         .left-nav a:link,.left-nav a:visited,.left-nav a:hover,.left-nav a:active { 
             color:white; 
@@ -63,8 +72,95 @@
             padding: 2%;
             padding-top: 0;
             background-color: white;
-            max-height: 80vh;
-            overflow: auto;
+            /* max-height: 80vh;
+            overflow: auto; */
+        }
+        .title{
+          font-size: 16px;
+          line-height: 50px;
+          border-bottom: 1px solid #e0e0e0;
+        }
+        .title a{
+          color: #FF3333;
+          float: right;
+        }
+        table{
+          margin-top: 20px;
+          text-align: center;
+          width: 100%;
+          border-collapse:collapse;
+        }
+        tr{
+          height: 50px;
+          line-height: 50px;
+        }
+        td{
+          border: 1px solid #e0e0e0;
+        }
+        .account{
+          display: flex;
+          align-items: center;
+        }
+        .account select{
+          color: #999999;
+          margin-left: 30px;
+          text-indent: 10px;
+          width: 200px;
+          height: 40px;
+          border-radius: 5px;
+          border: 1px solid #e0e0e0;
+        }
+        .list-div{
+          width: 100%;
+          max-height: 30vh;
+          overflow: auto;
+        }
+        .item{
+          width: 100%;
+          float: left;
+          padding: 20px 0;
+          border-top: 1px solid #e0e0e0;
+        }
+        .img-div{
+          width: 90px;
+          float: left;
+        }
+        .img-div img{
+          width: 65px;
+          height: 100px;
+        }
+        .content-div{
+          width: calc(100% - 90px) ;
+          float: left;
+        }
+        .content-div p{
+          margin: 0;
+        }
+        .content-title{
+          font-size: 17px;
+          margin-bottom: 5px !important;
+        }
+        .content-desc{
+          margin-top: 5px !important;
+          font-size: 14px;
+          color: #999999;
+        }
+        .content-earnings{
+          color: #999999;
+          font-size: 14px;
+          margin-top: 10px !important;
+        }
+        .content-earnings .red{
+          margin-right: 20px;
+          color: red;
+        }
+        .content-earnings .state{
+          color: #FD9603;
+        }
+        .pagination{
+          margin:10px 0;
+          margin-right: 9%;
+          float: right;
         }
     </style>
   </head>
@@ -76,8 +172,76 @@
         <div class="click"><a href="index.html?url=videoData&tag=3" target="_parent">视频数据</a></div>
     </div>
     <div class="rigth-content">
-
+      <p class="title">数据概览</p>
+      <table>
+        <thead>
+          <tr>
+            <td>账号</td>
+            <td>昨日视频(个)</td>
+            <td>昨日有效播放</td>
+            <td>昨日预收入(元)</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>吃鸡小妹</td>
+            <td>2</td>
+            <td>2000</td>
+            <td>24.32</td>
+          </tr>
+          <tr>
+            <td>小丸子</td>
+            <td>5</td>
+            <td>4000</td>
+            <td>48.64</td>
+          </tr>
+          <tr>
+            <td>吃鸡小妹</td>
+            <td>2</td>
+            <td>2000</td>
+            <td>24.32</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+    <div class="rigth-content">
+      <p class="title" style="border-bottom: 0;">数据详情<a href="javascript:void(0);">不相关视频</a></p>
+      <p class="account">抖音账号：
+        <select>
+          <option value ="1" selected>吃鸡小妹</option>
+          <option value ="2">小丸子</option>
+        </select>
+      </p>
+      <div class="list-div">
+        <div class="item">
+          <div class="img-div"><img src="img/cover.jpg" /></div>
+          <div class="content-div">
+            <p class="content-title">#爆款冰淇淋# 这辈子做过最厉害的事情，@大喵游戏评测，记得转发给你在家上网课的同学</p>
+            <p class="content-desc">播放量：2000</p>
+            <p class="content-desc">2020年05月13日 14:55</p>
+            <p class="content-earnings"><span class="red">当前收益：12.50元</span>收益状态：<span class="state">收益中</span></p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <ul class="pagination">
+        <li>
+          <a href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li>
+          <a href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
     <iframe class="bottom-iframe" src="bottom.html">
 
     </iframe>

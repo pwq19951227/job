@@ -63,8 +63,59 @@
             padding: 2%;
             padding-top: 0;
             background-color: white;
-            max-height: 80vh;
+            max-height: 50vh;
             overflow: auto;
+        }
+        .title{
+          font-size: 16px;
+          line-height: 50px;
+          border-bottom: 1px solid #e0e0e0;
+        }
+        .money-div{
+          border: 1px solid #e0e0e0;
+          background-color: #FCFCFC;
+          display: flex;
+          padding:20px 0;
+          width: 100%;
+        }
+        .money-div div{
+          text-align: center;
+          width: 50%;
+        }
+        .money-div h2{
+          font-size: 30px;
+          font-weight: 500;
+        }
+        select{
+          color: #999999;
+          text-indent: 10px;
+          width: 200px;
+          height: 40px;
+          border-radius: 5px;
+          border: 1px solid #e0e0e0;
+        }
+        button{
+          font-size: 16px;
+          margin-left: 20px;
+          width: 150px;
+          height: 40px;
+          line-height: 40px;
+          color: white;
+          background-color: #363636;
+          border: 0;
+        }
+        table{
+          margin-top: 20px;
+          text-align: center;
+          width: 100%;
+          border-collapse:collapse;
+        }
+        tr{
+          height: 50px;
+          line-height: 50px;
+        }
+        td{
+          border: 1px solid #e0e0e0;
         }
     </style>
   </head>
@@ -76,7 +127,47 @@
         <div><a href="index.html?url=moneyManage&tag=4" target="_parent">提现管理</a></div>
     </div>
     <div class="rigth-content">
-
+      <p class="title">收益数据</p> 
+      <div class="money-div">
+        <div>
+          <p>总收益</p>
+          <h2>0.00元</h2>
+        </div>
+        <div>
+          <p>可提现收益</p>
+          <h2>0.00元</h2>
+        </div>
+      </div>
+    </div>
+    <div class="rigth-content">
+      <p class="title">数据明细</p> 
+      <select>
+        <option value ="1" selected>2020-05</option>
+        <option value ="2">2020-06</option>
+      </select>
+      <button>搜索</button>
+      <table>
+        <thead>
+          <tr>
+            <td>抖音号</td>
+            <td>收入</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>吃鸡小妹</td>
+            <td>24.32</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
     <iframe class="bottom-iframe" src="bottom.html">
 
