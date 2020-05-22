@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>系统设置</title>
+    <title>提现管理</title>
     <style>
         ::-webkit-scrollbar {  
           width: 14px;  
@@ -60,66 +60,65 @@
             float: left;
             width: 75%;
             margin: 1%;
-            margin-bottom: 0;
             padding: 2%;
             padding-top: 0;
             background-color: white;
-            max-height: 80vh;
-            overflow: auto;
+            /* max-height: 80vh;
+            overflow: auto; */
         }
         .title{
           font-size: 16px;
           line-height: 50px;
           border-bottom: 1px solid #e0e0e0;
         }
-        .input-div{
-          padding:0 20px;
-        }
-        .input-div span{
-          color: #FF3333;
-          font-weight: 600;
-        }
-        .input-div p{
-          line-height: 50px;
-          display: flex;
-          align-items: center;
-        }
-        .input-div input{
-          margin-left: 15px;
-          width: 200px;
-          height: 30px;
-          line-height: 30px;
+        .money-div{
+          text-align: center;
           border: 1px solid #e0e0e0;
+          background-color: #FCFCFC;
+          padding:20px 0;
+          width: 100%;
         }
-        .input-div button{
-          margin-left: 60px;
-          font-size: 16px;
-          color: white;
-          width: 180px;
+        .money-div span{
+          font-size: 30px;
+        }
+        button{
+          width: 100px;
           height: 40px;
           line-height: 40px;
-          background-color: #FF0000;
-          border:0;
+          color: white;
+          background-color: #FF3333;
+          border: 0;
         }
-        .item-div{
-          height: 300px;
+        .table-div{
+          width: 100%;
+          max-height: 40vh;
           overflow: auto;
         }
-        .item{
-          padding:0 20px;
-          padding-bottom: 20px;
-          border-bottom: 1px solid #e0e0e0;
+        table{
+          margin-top: 20px;
+          text-align: center;
+          width: 100%;
+          border-collapse:collapse;
         }
-        .item button{
-          float: right;
-          margin-top: -30px;
+        thead tr{
+          height: 40px;
+          line-height: 40px;
+          background-color: #EFEFEF;
+        }
+        tbody tr{
+          height: 80px;
+          line-height: 80px;
+        }
+        td{
+          border: 1px solid #e0e0e0;
+        }
+        .explain-div{
           font-size: 14px;
-          color: white;
-          width: 80px;
-          height: 30px;
-          line-height: 30px;
-          background-color: #FF0000;
-          border:0;
+          margin-top: 40px;
+        }
+        .explain-div p{
+          margin: 0;
+          line-height: 20px;
         }
     </style>
   </head>
@@ -127,36 +126,48 @@
     <body>
       <div class="left-nav">
         <div></div>
-        <div class="click"><a href="index.html?url=sysSetting" target="_parent">系统设置</a></div>
+        <div><a href="../index.html?url=financeData&tag=4" target="_parent">财务数据</a></div>
+        <div class="click"><a href="../index.html?url=moneyManage&tag=4" target="_parent">提现管理</a></div>
     </div>
     <div class="rigth-content">
-      <div>
-        <p class="title">修改密码</p>
-        <div class="input-div">
-          <p>&nbsp;&nbsp;&nbsp;<span>*</span>原密码<input type="password"/></p>
-          <p>&nbsp;&nbsp;&nbsp;<span>*</span>新密码<input type="password"/></p>
-          <p><span>*</span>确定密码<input type="password"/></p>
-          <button>完成</button>
-        </div>
+      <p class="title">提现管理</p>
+      <div class="money-div">
+          <p>可提现余额<span>100.00元</span></p>
+          <button>提现</button>
       </div>
     </div>
     <div class="rigth-content">
-      <div class="item-div">
-        <p class="title">账户信息</p>
-        <div class="item">
-            <h3>支付宝</h3>
-            <p>支付宝账号:18905875462</p>
-            <p>收款人姓名:王富贵</p>
-            <button>编辑</button>
-        </div>
-        <div class="item">
-          <h3>银行卡</h3>
-          <p>银行卡号:62012312312332221</p>
-          <p>开户行:工商银行</p>
-          <p>户名:王富贵</p>
-          <button>编辑</button>
+      <p class="title">提现记录</p>
+      <div class="table-div">
+        <table>
+          <thead>
+            <tr>
+              <td>提现方式</td>
+              <td>提现账户</td>
+              <td>提现时间</td>
+              <td>金额</td>
+              <td>状态</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>支付宝</td>
+              <td>23123124124213123</td>
+              <td>2020-05-20 14:41</td>
+              <td>20.00</td>
+              <td>审核中</td>
+            </tr>
+          </tbody>
+        </table>
+      
+      <div class="explain-div">
+        <p>说明</p>
+        <p>1、根据相关规定，支付宝必须实名认证才可提现</p>
+        <p>2、申请提现起三个工作日内审核结算订单</p>
+        <p>3、提现金额单笔最低￥10,每月可随时提现一次</p>
+        <p>4、如有其它问题，请立即联系官方，微信：zouanwx2</p>
       </div>
-      </div>
+    </div>
     </div>
     <iframe class="bottom-iframe" src="bottom.html">
 

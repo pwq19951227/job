@@ -8,11 +8,11 @@
     <title>吾抖平台</title>
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script src="js/jquery.min.js"></script>
     <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <!--[if lt IE 9]>
       <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
@@ -29,6 +29,10 @@
             $('.logo-img').click(function () {
                 $(window).attr('location', 'index.html');
             });
+            $('#myTab a').click(function (e) {
+                e.preventDefault();
+                $(this).tab('show');
+            })
         })
         function switchColor(tag) {
             $('.link-div a').removeClass('click');
@@ -51,7 +55,7 @@
             }
         }
         function switchPage(url) {
-            document.getElementById("body-iframe").src = url + ".html";
+            document.getElementById("body-iframe").src = "html/"+url + ".html";
         }
         function getQueryVariable(variable) {
             var query = window.location.search.substring(1);
@@ -163,12 +167,44 @@
             background-color: white;
             color: #666666;
             border: 1px solid #999999;
-            margin-top: 10px;
+            margin-top: 15px;
             margin-right: 10%;
         }
 
         .show {
             display: inline;
+        }
+
+        #myModal  ul{
+            display: flex;
+        }
+        #myModal  ul  li{
+            text-align: center;
+            margin-bottom: -2px;
+            width: 50%;
+        }
+        #myModal  ul  li a{
+            font-size: 14px;
+            width: 100%;
+            /* border-radius:0; */
+        }
+        #myModal .login-button{
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            color: white;
+            background-color: #EF3636;
+            border-radius: 5px;
+            border: 0;
+        }
+        .modal-header{
+            padding: 0;
+        }
+        .modal-dialog{
+            width: 30vw;
+        }
+        .nav-tabs{
+            border: 0;
         }
     </style>
 </head>
@@ -200,8 +236,8 @@
                 </div>
             </ul>
         </div>
-        <button type="button" class="login-btn hide">登录</button>
-        <div class="dropdown show">
+        <button type="button"  class="login-btn show" data-toggle="modal" data-target="#myModal">登录</button>
+        <div class="dropdown hide">
             <a src="javascript:void(0);" class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target="#">
                 16611233312
                 <b class="caret"></b>
@@ -212,9 +248,38 @@
             </ul>
         </div>
     </div>
-    <iframe id="body-iframe" src="home.html">
+    <iframe id="body-iframe" src="html/home.html">
 
     </iframe>
+
+    <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="myModalLabel">
+            <ul class="nav nav-tabs" id="myTab">
+                <li class="active"><a href="#home">手机号注册并登录</a></li>
+                <li><a href="#profile">使用密码登录</a></li>
+              </ul>
+          </h4>
+        </div>
+        <div class="modal-body">
+            <div class="tab-content">
+                <div class="tab-pane active" id="home">
+                    手机号注册并登录
+                    <button class="login-button" data-dismiss="modal">注册并登录</button>
+                </div>
+                <div class="tab-pane" id="profile">
+                    密码登录
+                    <button class="login-button" data-dismiss="modal">登录</button>
+                </div>
+              </div>
+              
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
