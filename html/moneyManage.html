@@ -5,6 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>提现管理</title>
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="../js/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="../js/bootstrap.min.js"></script>
+    <script>
+      $(function () {
+            $('#myTab a').click(function (e) {
+                e.preventDefault();
+                $(this).tab('show');
+            })
+        })
+        function submit(){
+
+        }
+    </script>
     <style>
         ::-webkit-scrollbar {  
           width: 14px;  
@@ -23,6 +40,14 @@
 
         body{
             margin: 0;
+        }
+        a,
+        a:link,
+        a:visited,
+        a:hover,
+        a:active {
+            color: black;
+            text-decoration: none;
         }
         .left-nav a:link,.left-nav a:visited,.left-nav a:hover,.left-nav a:active { 
             color:white; 
@@ -94,22 +119,22 @@
           max-height: 40vh;
           overflow: auto;
         }
-        table{
+        .table-div table{
           margin-top: 20px;
           text-align: center;
           width: 100%;
           border-collapse:collapse;
         }
-        thead tr{
+        .table-div thead tr{
           height: 40px;
           line-height: 40px;
           background-color: #EFEFEF;
         }
-        tbody tr{
+        .table-div tbody tr{
           height: 80px;
           line-height: 80px;
         }
-        td{
+        .table-div td{
           border: 1px solid #e0e0e0;
         }
         .explain-div{
@@ -120,10 +145,95 @@
           margin: 0;
           line-height: 20px;
         }
+        #myModal  ul{
+            display: flex;
+        }
+        #myModal  ul  li{
+            text-align: center;
+            margin-bottom: -2px;
+            width: 50%;
+        }
+        #myModal  ul  li a{
+            font-size: 14px;
+            width: 100%;
+            /* border-radius:0; */
+        }
+        .cancel-button{
+          width: 100px;
+          height: 35px;
+          line-height: 35px;
+          color: #999999;
+          background-color: #ffffff;
+          border: 1px solid #e0e0e0;
+        }
+        .money-button{
+          width: 100px;
+          height: 35px;
+          line-height: 35px;
+          color: white;
+          background-color: #FF0000;
+          border: 1px solid #FF0000;
+        }
+        .modal-header{
+            padding: 0;
+        }
+        .modal-dialog{
+            width: 350px;
+        }
+        .nav-tabs{
+            border: 0;
+        }
+        .input-div{
+            margin-top: -10px;
+            width: 100%;
+        }
+        .package-div{
+          text-indent: 5px;
+          width: 100%;
+          height: 40px;
+          line-height: 40px;
+          border-radius: 5px;
+          border: 1px solid #e0e0e0;
+        }
+        .package-div input{
+          width: 150px;
+          height: 35px;
+          line-height: 35px;
+          border: 0;
+          outline: none;
+        }
+        .package-div a,
+        .package-div a:link,
+        .package-div a:visited,
+        .package-div a:hover,
+        .package-div a:active {
+            color: #FF0000;
+            text-decoration: none;
+        }
+        .input-div table{
+          width: 100%;
+        }
+        .input-div thead{
+          height: 40px;
+          line-height: 40px;
+          border-bottom: 1px solid #e0e0e0;
+        }
+        .input-div tbody{
+          height: 50px;
+          line-height: 50px;
+        }
+        .red{
+          color: #FF0000;
+        }
+        .gray{
+          color: #999999 !important;
+        }
+        .edit{
+          float: right;
+        }
     </style>
   </head>
   <body>
-    <body>
       <div class="left-nav">
         <div></div>
         <div><a href="../index.html?url=financeData&tag=4" target="_parent">财务数据</a></div>
@@ -133,7 +243,7 @@
       <p class="title">提现管理</p>
       <div class="money-div">
           <p>可提现余额<span>100.00元</span></p>
-          <button>提现</button>
+          <button type="button" data-toggle="modal" data-target="#myModal">提现</button>
       </div>
     </div>
     <div class="rigth-content">
@@ -172,5 +282,105 @@
     <iframe class="bottom-iframe" src="bottom.html">
 
     </iframe>
+        <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">
+          <ul class="nav nav-tabs" id="myTab">
+              <li class="active"><a href="#home">支付宝提现</a></li>
+              <li><a href="#profile">银行卡提现</a></li>
+            </ul>
+        </h4>
+      </div>
+      <div class="modal-body">
+          <div class="tab-content">
+              <div class="tab-pane active" id="home">
+                  <div class="input-div">
+                    <table>
+                      <thead>
+                        <tr>
+                          <td style="width: 80px;">余额</td>
+                          <td class="red">￥100.00</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>支付宝账号:</td>
+                          <td class="gray">1879020970376</td>
+                        </tr>
+                        <tr>
+                          <td>收款人姓名:</td>
+                          <td class="gray">王富贵</td>
+                        </tr>
+                        <tr>
+                          <td>提现金额:</td>
+                          <td>
+                            <div class="package-div">
+                              ￥<input type="text" class="money-input" placeholder="10元起提" /><a href="javascript:void(0);">全部提现</a>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td>
+                            <a class="edit gray" href="../index.html?url=sysSetting" target="_parent" >编辑信息</a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="modal-footer">
+                    <button class="cancel-button" data-dismiss="modal">取消</button>
+                    <button class="money-button" data-dismiss="modal" onclick="submit()">申请提现</button>
+                  </div>
+              </div>
+              <div class="tab-pane" id="profile">
+                <div class="input-div">
+                  <table>
+                    <thead>
+                      <tr>
+                        <td style="width: 80px;">余额</td>
+                        <td class="red">￥100.00</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>银行卡号:</td>
+                        <td class="gray">3551201238903123</td>
+                      </tr>
+                      <tr>
+                        <td>开户行:</td>
+                        <td class="gray">工商银行</td>
+                      </tr>
+                      <tr>
+                        <td>提现金额:</td>
+                        <td>
+                          <div class="package-div">
+                            ￥<input type="text" class="money-input" placeholder="10元起提" /><a href="javascript:void(0);">全部提现</a>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>
+                          <a class="edit gray" href="../index.html?url=sysSetting" target="_parent" >编辑信息</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                  <div class="modal-footer">
+                    <button class="cancel-button" data-dismiss="modal">取消</button>
+                    <button class="money-button" data-dismiss="modal" onclick="submit()">申请提现</button>
+                  </div>
+              </div>
+            </div>
+            
+      </div>
+    </div>
+  </div>
+</div>
   </body>
 </html>

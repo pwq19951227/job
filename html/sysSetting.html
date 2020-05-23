@@ -5,6 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>系统设置</title>
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="../js/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="../js/bootstrap.min.js"></script>
+    <script>
+      $(function(){
+        window.parent.login();
+      })
+    </script>
     <style>
         ::-webkit-scrollbar {  
           width: 14px;  
@@ -23,6 +34,7 @@
 
         body{
             margin: 0;
+            background-color: #F4F5F6;
         }
         .left-nav a:link,.left-nav a:visited,.left-nav a:hover,.left-nav a:active { 
             color:white; 
@@ -121,9 +133,76 @@
           background-color: #FF0000;
           border:0;
         }
+        .modal-dialog{
+            width: 350px;
+        }
+        .model-input{
+            padding: 20px;
+            padding-top: 10px;
+            width: 100%;
+        }
+        .model-input input,select{
+            height: 40px;
+            line-height: 40px;
+            text-indent: 10px;
+            border-radius: 5px;
+            border: 1px solid #e0e0e0;
+        }
+        .align{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .alipay{
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        .vcode{
+            width: 60%;
+        }
+        .send-vcode{
+            margin-left: 2%;
+            width: 38%;
+            height: 40px;
+            line-height: 40px;
+            background-color: #FFFFFF;
+            border-radius: 5px;
+            border: 1px solid #999999;
+        }
+        .bankNumber{
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        .select-bank{
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        .userNmane{
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        .address{
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        .cancel-button{
+          width: 100px;
+          height: 35px;
+          line-height: 35px;
+          color: #999999;
+          background-color: #ffffff;
+          border: 1px solid #e0e0e0;
+        }
+        .login-button{
+          width: 100px;
+          height: 35px;
+          line-height: 35px;
+          color: white;
+          background-color: #FF0000;
+          border: 1px solid #FF0000;
+        }
     </style>
   </head>
-  <body>
     <body>
       <div class="left-nav">
         <div></div>
@@ -147,19 +226,79 @@
             <h3>支付宝</h3>
             <p>支付宝账号:18905875462</p>
             <p>收款人姓名:王富贵</p>
-            <button>编辑</button>
+            <button type="button" data-toggle="modal" id="editAliPay" data-target="#myModal">编辑</button>
         </div>
         <div class="item">
           <h3>银行卡</h3>
           <p>银行卡号:62012312312332221</p>
           <p>开户行:工商银行</p>
           <p>户名:王富贵</p>
-          <button>编辑</button>
+          <button type="button" data-toggle="modal" id="editBankCard" data-target="#myModal2">编辑</button>
       </div>
       </div>
     </div>
     <iframe class="bottom-iframe" src="bottom.html">
 
     </iframe>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">
+          支付宝
+        </h4>
+      </div>
+      <div class="modal-body">
+          <div class="tab-content">
+              <div class="tab-pane active" id="home">
+                  <div class="model-input">
+                      <input type="text" class="alipay" placeholder="请输入支付宝账号" />
+                      <input type="text" class="alipay" placeholder="请输入支付宝认证姓名"/>
+                      <div class="align"><input type="text" class="vcode" placeholder="输入验证码" /><button class="send-vcode">获取验证码</button></div>
+                  </div>
+                  <div class="modal-footer">
+                    <button class="cancel-button" data-dismiss="modal">取消</button>
+                    <button class="login-button" data-dismiss="modal">提交</button>
+                  </div>
+              </div>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">
+          银行卡
+        </h4>
+      </div>
+      <div class="modal-body">
+          <div class="tab-content">
+              <div class="tab-pane active" id="home">
+                  <div class="model-input">
+                      <input type="text" class="bankNumber" placeholder="请输入银行卡号" />
+                      <select class="select-bank">
+                        <option value="0" >请选择开户行</option>
+                        <option value="1" >中国银行</option>
+                        <option value="2" >建设银行</option>
+                      </select>
+                      <input type="text" class="userNmane" placeholder="收款人姓名" />
+                      <input type="text" class="address" placeholder="请输入开户地址" />
+                      <div class="align"><input type="text" class="vcode" placeholder="输入验证码" /><button class="send-vcode">获取验证码</button></div>
+                  </div>
+                  <div class="modal-footer">
+                    <button class="cancel-button" data-dismiss="modal">取消</button>
+                    <button class="login-button" data-dismiss="modal">提交</button>
+                  </div>
+              </div>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
   </body>
 </html>
