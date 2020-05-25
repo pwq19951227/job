@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>抖音号管理</title>
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="../js/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="../js/bootstrap.min.js"></script>
     <style>
       ::-webkit-scrollbar {  
           width: 14px;  
@@ -23,6 +29,7 @@
 
         body{
             margin: 0;
+            background-color: #F4F5F6;
         }
         .left-nav a:link,.left-nav a:visited,.left-nav a:hover,.left-nav a:active { 
             color:white; 
@@ -37,7 +44,7 @@
             text-align: center;
             font-size: 16px;
             width: 15%;
-            height: 100vh;
+            height: 900px;
             background-color: #130335;
         }
         .left-nav div{
@@ -50,8 +57,8 @@
         }
         .bottom-iframe{
             border: 0;
-            width: 100%;
-            position: absolute;
+            width: 70%;
+            /* position: absolute; */
             bottom: 0;
             left: 0;
             height: 70px;
@@ -63,7 +70,7 @@
             padding: 2%;
             padding-top: 0;
             background-color: white;
-            max-height: 80vh;
+            max-height: 800px;
             overflow: auto;
         }
         .title{
@@ -72,6 +79,7 @@
           border-bottom: 1px solid #e0e0e0;
         }
         .title button{
+          margin-top: 5px;
           float: right;
           width: 130px;
           height: 40px;
@@ -122,6 +130,29 @@
           justify-content: center;
           align-items: center;
         }
+        .modal-dialog{
+            width: 350px;
+        }
+        .modal-body h5{
+          font-weight: 500;
+          font-size: 14px;
+        }
+        .modal-body p{
+          margin: 0;
+          color: #999999;
+          font-size: 12px;
+        }
+        .modal-body img{
+          width: 300px;
+          height: 300px;
+        }
+        .modal-body .code-div{
+          text-align: center;
+        }
+        .modal-body .desc-div{
+          padding: 0 10px;
+          margin-top: 20px;
+        }
     </style>
   </head>
   <body>
@@ -131,7 +162,7 @@
       <div class="click"><a href="../index.html?url=tikTok&tag=1" target="_parent">抖音号管理</a></div>
   </div>
   <div class="rigth-content">
-    <p class="title">我的抖音号<button>+添加抖音号</button></p>
+    <p class="title">我的抖音号<button type="button"  class="login-btn" data-toggle="modal" id="loginButton" data-target="#myModal">+添加抖音号</button></p>
     <table>
       <thead>
         <tr>
@@ -146,14 +177,28 @@
         <tr>
           <td><img src="../img/head.jpg"/>大萌游戏</td>
           <td>2020-05-21</td>
-          <td><button>重新授权</button></td>
+          <td><button type="button"  class="login-btn" data-toggle="modal" id="loginButton" data-target="#myModal">重新授权</button></td>
           <td>正常</td>
           <td><a href="javascript:void(0);">删除</a></td>
         </tr>
         <tr>
           <td><img src="../img/head.jpg"/>大萌游戏</td>
           <td>2020-05-21</td>
-          <td><button>重新授权</button></td>
+          <td><button type="button"  class="login-btn" data-toggle="modal" id="loginButton" data-target="#myModal">重新授权</button></td>
+          <td>正常</td>
+          <td><a href="javascript:void(0);">删除</a></td>
+        </tr>
+        <tr>
+          <td><img src="../img/head.jpg"/>大萌游戏</td>
+          <td>2020-05-21</td>
+          <td><button type="button"  class="login-btn" data-toggle="modal" id="loginButton" data-target="#myModal">重新授权</button></td>
+          <td>正常</td>
+          <td><a href="javascript:void(0);">删除</a></td>
+        </tr>
+        <tr>
+          <td><img src="../img/head.jpg"/>大萌游戏</td>
+          <td>2020-05-21</td>
+          <td><button type="button"  class="login-btn" data-toggle="modal" id="loginButton" data-target="#myModal">重新授权</button></td>
           <td>正常</td>
           <td><a href="javascript:void(0);">删除</a></td>
         </tr>
@@ -163,5 +208,24 @@
   <iframe class="bottom-iframe" src="bottom.html">
 
   </iframe>
+      <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="code-div">
+          <h5>抖音app扫码授权</h5>
+          <p>授权功能支持当前所有抖音号</p>
+          <img src="../img/code.png" />
+        </div>
+        <div class="desc-div">
+          <p>授权抖音app您可：</p>
+          <p>接入小程序实现流量变现</p>
+          <p>查看小程序收入数据</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
   </body>
 </html>

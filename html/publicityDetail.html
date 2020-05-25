@@ -6,6 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>推广详情</title>
+  <!-- Bootstrap -->
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+  <script src="../js/jquery.min.js"></script>
+  <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+  <script src="../js/bootstrap.min.js"></script>
   <style>
     ::-webkit-scrollbar {
       width: 14px;
@@ -32,7 +38,9 @@
       color: #08c;
       text-decoration: none;
     }
-
+    body{
+      background-color: #F4F5F6;
+    }
     .body-div {
       padding: 0 10vw;
     }
@@ -68,7 +76,7 @@
     .content-div {
       padding: 20px;
       background-color: white;
-      min-height: 70vh;
+      min-height: 600px;
     }
 
     .head {
@@ -192,11 +200,31 @@
     .bottom-iframe {
       border: 0;
       width: 100%;
-      position: absolute;
+      /* position: absolute; */
       left: 0;
       height: 70px;
       margin-top: 2vh;
     }
+    .modal-dialog{
+            width: 350px;
+        }
+        .modal-body h5{
+          font-weight: 500;
+          font-size: 14px;
+        }
+        .modal-body p{
+          margin: 0;
+          color: #999999;
+          font-size: 12px;
+        }
+        .modal-body img{
+          width: 300px;
+          height: 300px;
+        }
+        .modal-body .code-div{
+          padding-bottom: 20px;
+          text-align: center;
+        }
   </style>
 </head>
 
@@ -204,7 +232,7 @@
   <div class="body-div">
     <img src="../img/banner02.jpg" />
     <ul class="breadcrumb">
-      <li><a href="../index.html?url=myPublicity&tag=2" target="_parent">我要推广</a> <span class="divider">/</span></li>
+      <li><a href="../index.html?url=myPublicity&tag=2" target="_parent">我要推广</a><span class="divider"></span></li>
       <li class="active">弹弹恋爱</li>
     </ul>
     <div class="content-div">
@@ -213,7 +241,7 @@
           <img src="../img/head.jpg" />
         </div>
         <div class="content">
-          <p class="title">弹弹恋爱<button>开通收益权限</button></p>
+          <p class="title">弹弹恋爱<button type="button"  class="login-btn" data-toggle="modal" id="loginButton" data-target="#myModal">开通收益权限</button></p>
           <p class="desc">已有1254人推广</p>
           <p><span class="tag1">益智</span><span class="tag2">近期最高收益:1234.00元</span></p>
         </div>
@@ -238,6 +266,21 @@
   <iframe class="bottom-iframe" src="bottom.html">
 
   </iframe>
+        <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="code-div">
+          <h5>联系客服</h5>
+          <p>开通收益权限</p>
+          <img src="../img/code.png" />
+          <p>微信扫描二维码，联系客服小雨</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 
 </html>
