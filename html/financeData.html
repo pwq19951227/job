@@ -34,11 +34,11 @@
             text-decoration:none; 
         } 
         .left-nav{
-            float: left;
+            position: fixed;
             text-align: center;
             font-size: 16px;
             width: 200px;
-            height: 900px;
+            height: 100vh;
             background-color: #130335;
         }
         .left-nav div{
@@ -60,27 +60,20 @@
         .click{
             background-color: #FF3333;
         }
-        .bottom-iframe{
+        .bottom-iframe {
             border: 0;
-            width: 70%;
-            /* position: absolute; */
-            bottom: 0;
-            left: 0;
+            width: 100%;
+            margin-top: 10px;
             height: 70px;
         }
         .rigth-content{
             float: left;
             width: 75%;
             margin: 1%;
+            margin-left: calc(200px + 1%);
             padding: 2%;
             padding-top: 0;
             background-color: white;
-            /* max-height: 50vh;
-            overflow: auto; */
-        }
-        .maxheight{
-            max-height: 500px;
-            overflow: auto; 
         }
         .title{
           font-size: 16px;
@@ -154,7 +147,7 @@
         </div>
       </div>
     </div>
-    <div class="rigth-content maxheight">
+    <div class="rigth-content">
       <p class="title">数据明细</p> 
       <select>
         <option value ="1" selected>2020-05</option>
